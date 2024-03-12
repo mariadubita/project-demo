@@ -1,8 +1,3 @@
-# Define Azure resource group
-resource "azurerm_resource_group" "wordpress" {
-  name     = "wordpress-resources"
-  location = var.location
-}
 # Declare the public IP address resource
 resource "azurerm_public_ip" "wordpress" {
   name                = "wordpress-public-ip"
