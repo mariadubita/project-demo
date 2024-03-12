@@ -3,7 +3,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "wordpress" {
   location                        = var.location
   resource_group_name             = azurerm_resource_group.wordpress.name
   sku                             = "Standard_D2S_v3"
-  instances                       = 1
+  instances                       = 2
   admin_username                  = var.admin_username
   admin_password                  = var.admin_password
   disable_password_authentication = false
