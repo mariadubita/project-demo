@@ -33,3 +33,14 @@ resource "azurerm_linux_virtual_machine_scale_set" "wordpress" {
     }
     tags = var.tags
 }
+
+resource "azurerm_lb_rule" "wordpress" {
+  loadbalancer_id                = azurerm_lb.wordpress.id
+  name                           = "http"
+  protocol                       = "Tcp"
+  frontend_port                  = 80
+  backend_port                   = 80
+  frontend_ip_configuration_name = "Public-IP"
+  backend_address_pool_ids       = [azurerm_lb_backend_address_pool.bpepool.id]
+  probe_id                       = azurerm_lb_probe.wordpress.id  
+}
