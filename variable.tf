@@ -11,3 +11,7 @@ variable "tags" {
    environment = "Azure_Team_Project"
  }
 }
+variable "application_port" {
+  description = "The port that you want to expose to the external load balancer"
+  default     = 80
+}
