@@ -36,3 +36,9 @@ resource "azurerm_public_ip" "wordpress" {
   resource_group_name = azurerm_resource_group.wordpress.name
   allocation_method   = "Dynamic"
 }
+
+variable "application_port" {
+  description = "The port used by the application"
+  type        = number
+  default     = 80  # Adjust the default port number as needed
+}
