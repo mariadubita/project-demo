@@ -1,7 +1,7 @@
 variable "location" {
   description = "The location where resources will be created"
   type        = string
-  default     = null
+  default     = "eastus"
 }
 
 variable "tags" {
