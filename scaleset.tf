@@ -5,6 +5,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "wordpress" {
   sku                             = "Standard_D2S_v3"
   instances                       = 2
   admin_username                  = var.admin_username
+  admin_password                  = var.admin_password
   disable_password_authentication = false
   custom_data = filebase64("customdata.sh")
 
