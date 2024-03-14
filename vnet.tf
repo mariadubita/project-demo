@@ -27,3 +27,20 @@ resource "azurerm_subnet" "subnet3" {
   virtual_network_name = azurerm_virtual_network.wordpress.name
   address_prefixes     = ["10.0.3.0/24"]
 }
+
+resource "azurerm_public_ip" "wordpress" {
+  name                = "wordpress-public-ip"
+  location            = var.location
+  resource_group_name = azurerm_resource_group.wordpress.name
+  allocation_method   = "Static"
+  # domain_name_label   = random_string.fqdn.result
+  tags                = var.tags
+}
+
+resource "aws_route53_record" "wordpressdb" {
+  zone_id = "Z0998587I8XIP5TPW8IC"
+  name    = "wordpress.awsstudying.com"
+  type    = "A"
+  ttl     = 300
+  records = [azurerm_public_ip.wordpress.ip_address]
+}
