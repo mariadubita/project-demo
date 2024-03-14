@@ -4,7 +4,7 @@ eastus:
 		terraform apply -var-file envs/eastus.tfvars -auto-approve
 
 all:
-	make eastus
+		make eastus
 
 eastus-destroy:
 		terraform workspace new  eastus  || terraform workspace select  eastus
@@ -12,4 +12,4 @@ eastus-destroy:
 		terraform destroy -var-file envs/eastus.tfvars -auto-approve
 
 destroy-all:
-	make destroy-eastus
+		make destroy-eastus
