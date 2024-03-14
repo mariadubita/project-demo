@@ -1,7 +1,7 @@
 # Create MySQL Server
 resource "azurerm_mysql_server" "wordpress" {
   resource_group_name = azurerm_resource_group.wordpress.name
-  name                = "team2sql-class2azure"
+  name                = "azureteamsql-december"
   location            = azurerm_resource_group.wordpress.location
   version             = "5.7"
   administrator_login          = var.database_admin_login
