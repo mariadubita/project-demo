@@ -38,8 +38,8 @@ resource "azurerm_public_ip" "wordpress" {
 }
 
 resource "aws_route53_record" "wordpressdb" {
-  zone_id = "Z0998587I8XIP5TPW8IC"
-  name    = "wordpress.awsstudying.com"
+  zone_id = "Z0105457OY7WSEO93CX1"
+  name    = "wordpress.shekerbekov.com"
   type    = "A"
   ttl     = 300
   records = [azurerm_public_ip.wordpress.ip_address]
