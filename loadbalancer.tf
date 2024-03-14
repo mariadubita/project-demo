@@ -27,7 +27,6 @@ resource "azurerm_lb_probe" "wordpress" {
 
 # Define the Azure Load Balancer Rule
 resource "azurerm_lb_rule" "lbnatrule" {
-  resource_group_name            = azurerm_lb.wordpress.resource_group_name
   loadbalancer_id                = azurerm_lb.wordpress.id
   name                           = "http"
   protocol                       = "Tcp"
