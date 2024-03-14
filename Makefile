@@ -12,4 +12,4 @@ eastus-destroy:
 		terraform destroy -var-file envs/eastus.tfvars -auto-approve
 
 destroy-all:
-make destroy-eastus
+	make destroy-eastus
