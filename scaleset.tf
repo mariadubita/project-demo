@@ -14,10 +14,14 @@ resource "azurerm_linux_virtual_machine_scale_set" "wordpress" {
     sku       = "7_9-gen2"
     version   = "latest"
   }
+
+
   os_disk {
     storage_account_type = "Standard_LRS"
     caching              = "ReadWrite"
   }
+
+
   network_interface {
     name    = "NetworkInterface"
     primary = true
@@ -31,5 +35,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "wordpress" {
     #   }
       }
     }
+
+    
     tags = var.tags
 }
