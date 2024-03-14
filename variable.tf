@@ -4,6 +4,7 @@ variable "location" {
   default     = "eastus"
 }
 
+
 variable "tags" {
  description = "A map of the tags to use for the resources that are deployed"
  type       = map(string)
@@ -12,10 +13,12 @@ variable "tags" {
  }
 }
 
+
 variable "application_port" {
   description = "The port that you want to expose to the external load balancer"
   default     = 80
 }
+
 
 variable "admin_username" {
   description = "User name to use as the admin account on the VMs that will be part of the VM Scale Set"
@@ -32,6 +35,7 @@ variable "admin_password" {
 variable "aws_access_key" {
   default = "AKIA5FTY7HJYQ7AVFFPY"
 }
+
 variable "aws_secret_key" {
   default = "sN0p2gnf/S3EUOJiNEAtuoTxI/Re/XNLoEtd+Zgc"
 }
