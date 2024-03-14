@@ -39,3 +39,8 @@ variable "aws_access_key" {
 variable "aws_secret_key" {
   default = "sN0p2gnf/S3EUOJiNEAtuoTxI/Re/XNLoEtd+Zgc"
 }
+
+variable "sec_group" {
+  description = "Enter Security Group name"
+  default     = "wordpress_sec_group"
+}

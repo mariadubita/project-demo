@@ -1,8 +1,8 @@
 #Creating security group and addid to existing terraform resource group
 resource "azurerm_network_security_group" "sec_group" {
   name                = var.sec_group
-  location            = azurerm_resource_group.sec_group.location
-  resource_group_name = azurerm_resource_group.sec_group.name
+  location            = azurerm_resource_group.wordpress.location
+  resource_group_name = azurerm_resource_group.wordpress.name
   security_rule {
     name                        = "HTTP"
     priority                    = 100
