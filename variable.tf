@@ -46,8 +46,7 @@ variable "sec_group" {
 }
 
 variable "database_admin_login" {
-  description = "Default login for database"
-  default     = wordpress
+  default     = "wordpress"
 }
 
 variable "database_admin_password" {
