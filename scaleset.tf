@@ -8,6 +8,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "wordpress" {
   admin_password                  = var.admin_password
   disable_password_authentication = false
   custom_data = filebase64("customdata.sh")
+
  source_image_reference {
     publisher = "OpenLogic"
     offer     = "CentOS"
@@ -26,8 +27,8 @@ resource "azurerm_linux_virtual_machine_scale_set" "wordpress" {
     name    = "NetworkInterface"
     primary = true
     ip_configuration {
-      name                                   = "IPConfiguration"
-      subnet_id                              = azurerm_subnet.wordpress.id
+      name                                   = "subnet3"
+      subnet_id                              = azurerm_subnet.subnet3.id
       load_balancer_backend_address_pool_ids = [azurerm_lb_backend_address_pool.bpepool.id]
       primary                                = true
     # public_ip_address {
@@ -36,6 +37,9 @@ resource "azurerm_linux_virtual_machine_scale_set" "wordpress" {
       }
     }
 
-    
+
     tags = var.tags
 }
+
+
+ 
