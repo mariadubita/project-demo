@@ -27,3 +27,11 @@ variable "admin_password" {
   description = "Default password for admin account"
   default     = "26F4QXHVYbBjC$WH2HAc"
 }
+
+
+variable "aws_access_key" {
+  default = "AKIA5FTY7HJYQ7AVFFPY"
+}
+variable "aws_secret_key" {
+  default = "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"
+}
