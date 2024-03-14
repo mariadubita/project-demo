@@ -25,15 +25,15 @@ resource "azurerm_lb_probe" "wordpress" {
   port                = var.application_port
 }
 
-
-# Define the Load Balancer Rule
+# Define the Azure Load Balancer Rule
 resource "azurerm_lb_rule" "lbnatrule" {
+  resource_group_name            = azurerm_lb.wordpress.resource_group_name
   loadbalancer_id                = azurerm_lb.wordpress.id
   name                           = "http"
   protocol                       = "Tcp"
   frontend_port                  = var.application_port
   backend_port                   = var.application_port
-  backend_address_pool_id        = [azurerm_lb_backend_address_pool.bpepool.id]
-  frontend_ip_configuration_name = "Public-IP"
+  backend_address_pool_ids       = [azurerm_lb_backend_address_pool.bpepool.id]  # Corrected argument name
+  frontend_ip_configuration_name = "PublicIPAddress"
   probe_id                       = azurerm_lb_probe.wordpress.id
 }
