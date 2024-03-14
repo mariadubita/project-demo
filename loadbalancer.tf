@@ -20,7 +20,6 @@ resource "azurerm_lb_backend_address_pool" "bpepool" {
 
 # Define the Probe for the Load Balancer
 resource "azurerm_lb_probe" "wordpress" {
-  resource_group_name = azurerm_resource_group.wordpress.name
   loadbalancer_id     = azurerm_lb.wordpress.id
   name                = "ssh-running-probe"
   port                = var.application_port
