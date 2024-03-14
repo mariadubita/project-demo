@@ -1,4 +1,5 @@
 # Define the Azure Load Balancer for WordPress
+
 resource "azurerm_lb" "wordpress" {
   name                = "wordpress-lb"
   location            = var.location

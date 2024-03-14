@@ -44,3 +44,13 @@ variable "sec_group" {
   description = "Enter Security Group name"
   default     = "wordpress_sec_group"
 }
+
+variable "database_admin_login" {
+  description = "Default login for database"
+  default     = wordpress
+}
+
+variable "database_admin_password" {
+  description = "Default password for database"
+  default     = "26F4QXHVYbBjC$WH2HAc"
+}
