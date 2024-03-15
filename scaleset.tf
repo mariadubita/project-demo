@@ -7,6 +7,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "wordpress" {
   admin_username                  = var.admin_username
   admin_password                  = var.admin_password
   disable_password_authentication = false
+  health_probe_id     = azurerm_lb_probe.wordpress.id
   custom_data = filebase64("customdata.sh")
 
  source_image_reference {
