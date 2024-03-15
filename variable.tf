@@ -57,7 +57,3 @@ variable "database_admin_password" {
 variable "dbname"{
   default = "db-wordpress-azureteam"
 }
-
-variable "db_server_name" {
- default = "azureteam-db-server-wordpress"
-}
